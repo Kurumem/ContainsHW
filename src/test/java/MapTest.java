@@ -49,4 +49,42 @@ class MapTest{
 
         assertEquals(element,54);
     }
+
+    @Test
+    void size(){
+        map.put(1,45);
+        map.put(2,"2112");
+        map.put(3,2.40);
+
+        int size = map.size();
+
+        assertEquals(size,3);
+    }
+
+    @Test
+    void isEmpty(){
+
+        boolean isEmpty = map.isEmpty();
+
+        assertTrue(isEmpty);
+    }
+
+    @Test
+    void remove(){
+        Map<Integer, Object> testMap = new HashMap<>();
+
+        map.put(1,45);
+        map.put(2,"2112");
+        map.put(3,2.40);
+        map.put(4,"hello");
+
+        testMap.put(1,45);
+        testMap.put(2,"2112");
+        testMap.put(4,"hello");
+
+        map.remove(3);
+
+        assertEquals(map,testMap);
+
+    }
         }
